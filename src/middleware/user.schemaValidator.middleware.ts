@@ -1,6 +1,6 @@
 //External Dependencies
 import { RequestHandler } from "express";
-import schemas from "../utils/user.ValidatorSchema";
+import schemas from "../validator/user.validator";
 import { JoiError, customError, ValidationError } from "../error/error";
 //Global Config
 
