@@ -1,10 +1,11 @@
 //External dependencies
-import config from "config";
 import { connect } from "mongoose";
+import { appConfig } from "./app.config";
+require("dotenv").config();
 
 export const connectDB = async () => {
 	try {
-		const mongoURI: string = config.get("MONGO_URI");
+		const mongoURI: string = appConfig.mongoUri;
 		await connect(mongoURI);
 		console.log("MongoDB Connected...");
 	} catch (error) {
