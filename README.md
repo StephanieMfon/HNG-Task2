@@ -18,10 +18,10 @@ Lists the key features or functionalities of this project, implemented a CRUD AP
 
 The API has the following endpoints:
 
-    *  **GET** `/api/:id` - Get's a User resource using the id parameter.
-    *  **POST** `/api` - Ceates a new User resource.
-    *  **PATCH** `/api/:id` - Updates the User's name using the id paramter.
-    * **DELETE** `/api/:id`- Deletes a User's details using the id parameter
+  -   **GET** `/api/:id` - Get's a User resource using the id parameter.
+  -  **POST** `/api` - Ceates a new User resource.
+  -   **PATCH** `/api/:id` - Updates the User's name using the id paramter.
+  -  **DELETE** `/api/:id`- Deletes a User's details using the id parameter
 
 ## Installation
 
