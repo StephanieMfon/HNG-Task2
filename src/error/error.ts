@@ -55,6 +55,6 @@ export class ConflictError extends Error {
 		super(message);
 		this.status = 409;
 		this.errorType = "ConflictError";
-		Object.setPrototypeOf(this, ConflictError.prototype);
+		// Object.setPrototypeOf(this, ConflictError.prototype);
 	}
 }

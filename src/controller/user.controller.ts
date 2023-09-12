@@ -33,7 +33,7 @@ export default class UserController {
 			message: "User created",
 			data: {
 				name: newUser.name,
-				_id: newUser._id,
+				id: newUser._id,
 			},
 		});
 	}
@@ -44,17 +44,13 @@ export default class UserController {
 	 * @returns: The User's details
 	 */
 	static async getUsersDetails(req: Request, res: Response) {
-		const id = req.params.id || req.query.id;
+		const id = req?.params?.id;
 
-		if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-			return res.status(400).json({
-				status: "Fail",
-				message: "Invalid Object Id",
-			});
-		}
+		if (!mongoose.Types.ObjectId.isValid(req.params.id))
+			throw new BadUserRequestError("Invalid Id");
 		const user = await User.findOne({ _id: id });
 
-		if (!user) return res.status(400).send("User does not exist");
+		if (!user) throw new NotFoundError("User does not exist");
 
 		return res.status(200).json({
 			staus: "success",
@@ -89,7 +85,7 @@ export default class UserController {
 			message: "Name Successfully Updated",
 			data: {
 				name: user.name,
-				_id: user._id,
+				id: user._id,
 			},
 		});
 	}
