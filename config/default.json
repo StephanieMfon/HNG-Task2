@@ -1,0 +1,4 @@
+{
+	"MONGO_URI": "mongodb+srv://okpomfonstephanie:missokpomfon@cluster0.wqjyqio.mongodb.net/Users?retryWrites=true&w=majority",
+	"PORT": "4000"
+}
