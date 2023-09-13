@@ -5,12 +5,25 @@ A Backend Application for HNG stage2 Backend Task
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [API Documentation](#apidocumentation)
 - [Features](#features)
+- [Technologies Used](#technologiesused)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Directory Structure](#directorystructure)
+- [API Endpoints](#apiendpoints)
+- [Contribution](#contribution)
 
 ## Introduction
 
 This is a REST API that is capable of CRUD operations on a "person's" resource.
+
+## API Documentation
+
+- For detailed API documentation, please refer to the
+  [Postman API Documentation](https://documenter.getpostman.com/view/26542199/2s9YC4UY4X).
+
+- For tests, refer to the [PostmanTests](https://github.com/StephanieMfon/HNG-Task2/blob/main/tests.js) file.
 
 ## Features
 
@@ -22,6 +35,21 @@ The API has the following endpoints:
 - **POST** `/api` - Ceates a new User resource.
 - **PATCH** `/api/:id` - Updates the User's name using the id paramter.
 - **DELETE** `/api/:id`- Deletes a User's details using the id parameter
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Joi for validation
+
+## Prerequisites
+
+Before setting up the codebase, make sure you have the following prerequisites installed:
+
+- [Node.js](https://nodejs.org/) (version 18 or above)
+- [Git](https://git-scm.com/)
 
 ## Installation
 
@@ -49,4 +77,112 @@ PORT=your-port
 
 # Use this to run the server
 npm run start
+
+Visit http://localhost:4000 in your web browser to access the application.
 ````
+
+## Dierctory Structure
+
+```bash
+Hng_Stage_two/
+├───config/
+├───src/
+│ ├───controller.ts
+│ ├───error.ts
+│ ├───middleware.ts
+│ ├───route.ts
+│ ├───utils.ts
+│ └───validator.ts
+│
+├───.env
+├───server.ts
+├───package.json
+├───test.js
+└───README.md
+```
+
+- `src/`: Contains the main source code files.
+- `.env`: Configuration file for environment variables.
+- `server.ts`: The entry point of the application.
+- `package.json`: Dependencies and scripts configuration.
+- `README.md`: Documentation for the project.
+- `test.js`: postman tests for the endpoints.
+
+## API Endpoints
+
+- **Create User:**
+
+  - URL: `/api`
+  - Method: `POST`
+  - Description: Create a new user.
+  - Request Body:
+    - Example:
+      ```json
+      {
+      	"name": "Jane Doe"
+      }
+      ```
+  - Response:
+    - Status Code: `201 Created`
+    - Example:
+      ```json
+      {
+      	"name": "Jane Doe",
+      	"id": "user_id"
+      }
+      ```
+
+- **Get User by ID:**
+
+  - URL: `/api/:user_id`
+  - Method: `GET`
+  - Description: Retrieve user information by their ID.
+  - Response:
+    - Status Code: `200 OK`
+    - Example:
+      ```json
+      {
+      	"name": "Jane Doe",
+      	"id": "user_id"
+      }
+      ```
+
+- **Update User by ID:**
+
+  - URL: `/api/:user_id`
+  - Method: `PUT`
+  - Description: Update user data by their ID.
+  - Request Body:
+    - Example:
+      ```json
+      {
+      	"name": "Updated Name"
+      }
+      ```
+  - Response:
+    - Status Code: `200 OK`
+    - Example:
+      ```json
+      {
+      	"name": "Updated Name",
+      	"id": "user_id"
+      }
+      ```
+
+- **Delete User by ID:**
+
+  - URL: `/api/:user_id`
+  - Method: `DELETE`
+  - Description: Delete a user by their ID.
+  - Response:
+
+    - Status Code: `200 OK`
+    - Example:
+
+      ```json
+      "User data deleted"
+      ```
+
+## Contribution
+
+Contributions are welcome! Please fork this repository and create a pull request with your changes.
