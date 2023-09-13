@@ -46,7 +46,7 @@ export default class UserController {
 	static async getUsersDetails(req: Request, res: Response) {
 		const id = req?.params?.user_id;
 
-		if (!mongoose.Types.ObjectId.isValid(req.params.user_idid))
+		if (!mongoose.Types.ObjectId.isValid(req.params.user_id))
 			throw new BadUserRequestError("Invalid Id");
 		const user = await User.findOne({ _id: id });
 
