@@ -82,7 +82,7 @@ npm run start
 Visit http://localhost:4000 in your web browser to access the application.
 ````
 
-## Dierctory Structure
+## Directory Structure
 
 ```bash
 Hng_Stage_two/
