@@ -5,13 +5,13 @@ A Backend Application for HNG stage2 Backend Task
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [API Documentation](#apidocumentation)
+- [API Documentation](#api-documentation)
 - [Features](#features)
-- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologies-used)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Directory Structure](#directorystructure)
-- [API Endpoints](#apiendpoints)
+- [Directory Structure](#directory-structure)
+- [API Endpoints](#api-endpoints)
 - [Contribution](#contribution)
 
 ## Introduction
