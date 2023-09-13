@@ -15,6 +15,7 @@ A Backend Application for HNG stage2 Backend Task
 - [Contribution](#contribution)
 
 ## Introduction
+![image](https://drive.google.com/uc?id=1wmGkSc6mMet9b3p7Lv9OZmMYmAKepTEC)
 
 This is a REST API that is capable of CRUD operations on a "person's" resource.
 
@@ -31,10 +32,10 @@ Lists the key features or functionalities of this project, implemented a CRUD AP
 
 The API has the following endpoints:
 
-- **GET** `/api/:id` - Get's a User resource using the id parameter.
+- **GET** `/api/:user_id` - Get's a User resource using the id parameter.
 - **POST** `/api` - Ceates a new User resource.
-- **PATCH** `/api/:id` - Updates the User's name using the id paramter.
-- **DELETE** `/api/:id`- Deletes a User's details using the id parameter
+- **PATCH** `/api/:user_id` - Updates the User's name using the id paramter.
+- **DELETE** `/api/:user_id`- Deletes a User's details using the id parameter
 
 ## Technologies Used
 
