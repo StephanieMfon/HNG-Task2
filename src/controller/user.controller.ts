@@ -101,7 +101,9 @@ export default class UserController {
 		if (!mongoose.Types.ObjectId.isValid(req.params.user_id))
 			throw new BadUserRequestError("Invalid Id");
 
-		await User.findByIdAndDelete(id);
+		const user = await User.findByIdAndDelete(id);
+		if (!user) throw new NotFoundError("User does not exist");
+
 		return res.status(200).json({
 			status: "success",
 			messages: `Resource with id ${id} successfully deleted.`,
