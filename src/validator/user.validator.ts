@@ -7,5 +7,5 @@ const userSchema = Joi.object().keys({
 
 export default {
 	"/": userSchema,
-	"/:id": userSchema,
+	"/:user_id": userSchema,
 } as { [key: string]: ObjectSchema };

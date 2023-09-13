@@ -44,9 +44,9 @@ export default class UserController {
 	 * @returns: The User's details
 	 */
 	static async getUsersDetails(req: Request, res: Response) {
-		const id = req?.params?.id;
+		const id = req?.params?.user_id;
 
-		if (!mongoose.Types.ObjectId.isValid(req.params.id))
+		if (!mongoose.Types.ObjectId.isValid(req.params.user_idid))
 			throw new BadUserRequestError("Invalid Id");
 		const user = await User.findOne({ _id: id });
 
@@ -67,9 +67,9 @@ export default class UserController {
 	 * @returns: The updated User's details
 	 */
 	static async updateUsersName(req: Request, res: Response) {
-		const id = req?.params?.id;
+		const id = req?.params?.user_id;
 
-		if (!mongoose.Types.ObjectId.isValid(req.params.id))
+		if (!mongoose.Types.ObjectId.isValid(req.params.user_id))
 			throw new BadUserRequestError("Invalid Object Id");
 
 		const user = await User.findOneAndUpdate(
@@ -96,14 +96,11 @@ export default class UserController {
 	 * @returns: message confirming User has been deleted
 	 */
 	static async deleteUser(req: Request, res: Response) {
-		const id = req?.params?.id;
+		const id = req?.params?.user_id;
 
-		if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-			return res.status(400).json({
-				status: "Fail",
-				message: "Invalid Object Id",
-			});
-		}
+		if (!mongoose.Types.ObjectId.isValid(req.params.user_id))
+			throw new BadUserRequestError("Invalid Id");
+
 		await User.findByIdAndDelete(id);
 		return res.status(200).json({
 			status: "success",

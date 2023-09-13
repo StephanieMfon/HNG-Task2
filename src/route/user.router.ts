@@ -15,16 +15,16 @@ router.post(
 );
 
 //GET
-router.get("/:id", tryCatchWrapper(UserController.getUsersDetails));
+router.get("/:user_id", tryCatchWrapper(UserController.getUsersDetails));
 
 //PATCH
 router.patch(
-	"/:id",
-	schemaValidator("/:id"),
+	"/:user_id",
+	schemaValidator("/:user_id"),
 	tryCatchWrapper(UserController.updateUsersName)
 );
 
 //DELETE
-router.delete("/:id", tryCatchWrapper(UserController.deleteUser));
+router.delete("/:user_id", tryCatchWrapper(UserController.deleteUser));
 
 export { router };
